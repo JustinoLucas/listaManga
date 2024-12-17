@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { mangaData } from "../../interface/mangaData";
 import { useMangaDataMutate } from "../../hooks/useMangaDataMutate";
+import './modal.css'
 
 
 interface InputProps {
@@ -19,15 +20,17 @@ const Input = ({label, value, updateValue}: InputProps) => {
     )
 }
 
+interface ModalProps {
+    closeModal(): void
+}
 
-
-export function CreateModal(){
+export function CreateModal({ closeModal }: ModalProps){
 
 const [nome, setNome] = useState("");
 const [descricao, setDescricao] = useState("")
 const [imagem_capa, setImagemCapa] = useState("")
 const [capitulos, setCapitulos] = useState(0)
-const { mutate } = useMangaDataMutate();
+const { mutate, isSuccess, isPending } = useMangaDataMutate();
 
 const submit = () => {
     const mangaData: mangaData = {
@@ -39,8 +42,13 @@ const submit = () => {
     mutate(mangaData);
 }
 
+useEffect(() =>{
+    if(!isSuccess) return
+    closeModal();
+}, [isSuccess])
+
     return(
-        <div className="modal-overflow">
+        <div className="modal-overlay">
             <div className="modal-body">
                 <h2>Cadastre um novo Manga</h2>
                 <form className="input-container">
@@ -49,7 +57,10 @@ const submit = () => {
                     <Input label="imagem_capa" value={imagem_capa} updateValue={setImagemCapa}/>
                     <Input label="capitulos" value={capitulos} updateValue={setCapitulos}/>
                 </form>
-                <button onClick={submit} className="btn-secondary">Enviar</button>
+                <button onClick={submit} className="btn-secondary">
+                    {isPending ? 'Enviando...' : 'Enviado'}
+                </button>
+                
             </div>
         </div>
     )

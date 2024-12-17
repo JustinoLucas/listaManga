@@ -9,6 +9,7 @@ import { CreateModal } from './components/create-modal/create-modal'
 function App() {
   const {data} = useMangaData();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleOpenModal = () => {
     setIsModalOpen(prev => !prev)
   }
@@ -22,7 +23,7 @@ function App() {
         nome={mangaData.nome}
         imagem_capa={mangaData.imagem_capa}
         capitulos={mangaData.capitulos}/>)}
-        {isModalOpen && <CreateModal/>}
+        {isModalOpen && <CreateModal closeModal={handleOpenModal}/>}
         <button onClick={handleOpenModal}>novo</button>
       </div>
     </div>
