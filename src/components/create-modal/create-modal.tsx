@@ -15,7 +15,7 @@ const Input = ({label, value, updateValue}: InputProps) => {
     return(
         <>
             <label>{label}</label>
-            <input value={value} onChange={event => updateValue(event.target.value)}></input>
+            <input value={value} onChange={event => updateValue(event.target.value)} required></input>
         </>
     )
 }
@@ -52,14 +52,15 @@ useEffect(() =>{
             <div className="modal-body">
                 <h2>Cadastre um novo Manga</h2>
                 <form className="input-container">
-                    <Input label="nome" value={nome} updateValue={setNome}/>
-                    <Input label="descricao" value={descricao} updateValue={setDescricao}/>
-                    <Input label="imagem_capa" value={imagem_capa} updateValue={setImagemCapa}/>
-                    <Input label="capitulos" value={capitulos} updateValue={setCapitulos}/>
+                    <Input label="Nome do Manga" value={nome} updateValue={setNome}/>
+                    <Input label="Sinopse" value={descricao} updateValue={setDescricao}/>
+                    <Input label="Imagem da Capa em URL" value={imagem_capa} updateValue={setImagemCapa}/>
+                    <Input label="Capitulos" value={capitulos} updateValue={setCapitulos}/>
                 </form>
                 <button onClick={submit} className="btn-secondary">
-                    {isPending ? 'Enviando...' : 'Enviado'}
+                    {isPending ? 'Enviando...' : 'Enviar'}
                 </button>
+                <button className="btn-secondary">Sair</button>
                 
             </div>
         </div>
