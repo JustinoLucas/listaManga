@@ -1,4 +1,7 @@
 import { useState } from "react"
+import { mangaData } from "../../interface/mangaData";
+import { useMangaDataMutate } from "../../hooks/useMangaDataMutate";
+
 
 interface InputProps {
     label: string,
@@ -18,12 +21,23 @@ const Input = ({label, value, updateValue}: InputProps) => {
 
 
 
-export function ComponentName(){
+export function CreateModal(){
 
 const [nome, setNome] = useState("");
 const [descricao, setDescricao] = useState("")
 const [imagem_capa, setImagemCapa] = useState("")
 const [capitulos, setCapitulos] = useState(0)
+const { mutate } = useMangaDataMutate();
+
+const submit = () => {
+    const mangaData: mangaData = {
+        nome,
+        descricao,
+        imagem_capa,
+        capitulos
+    }
+    mutate(mangaData);
+}
 
     return(
         <div className="modal-overflow">
@@ -35,6 +49,7 @@ const [capitulos, setCapitulos] = useState(0)
                     <Input label="imagem_capa" value={imagem_capa} updateValue={setImagemCapa}/>
                     <Input label="capitulos" value={capitulos} updateValue={setCapitulos}/>
                 </form>
+                <button onClick={submit} className="btn-secondary">Enviar</button>
             </div>
         </div>
     )
