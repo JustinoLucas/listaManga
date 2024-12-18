@@ -52,7 +52,7 @@ useEffect(() =>{
             <div className="modal-body">
                 <h2>Cadastre um novo Manga</h2>
                 <form className="input-container">
-                    <Input label="Nome do Manga" value={nome} updateValue={setNome}/>
+                    <Input label="Nome do Manga" value={nome} updateValue={setNome} />
                     <Input label="Sinopse" value={descricao} updateValue={setDescricao}/>
                     <Input label="Imagem da Capa em URL" value={imagem_capa} updateValue={setImagemCapa}/>
                     <Input label="Capitulos" value={capitulos} updateValue={setCapitulos}/>
@@ -60,7 +60,7 @@ useEffect(() =>{
                 <button onClick={submit} className="btn-secondary">
                     {isPending ? 'Enviando...' : 'Enviar'}
                 </button>
-                <button className="btn-secondary">Sair</button>
+                <button className="btn-secondary" onClick={closeModal}>Sair</button>
                 
             </div>
         </div>
