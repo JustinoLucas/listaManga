@@ -1,16 +1,16 @@
-.modal-overlay {
+.update-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  .modal {
+  .update-modal {
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -18,16 +18,16 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .modal h2 {
+  .update-modal h2 {
     margin-bottom: 20px;
   }
   
-  .modal label {
+  .update-modal label {
     display: block;
     margin-bottom: 10px;
   }
   
-  .modal input {
+  .update-modal input {
     width: 100%;
     padding: 8px;
     margin-bottom: 20px;
@@ -35,7 +35,7 @@
     border-radius: 4px;
   }
   
-  .modal-actions {
+  .update-modal-actions {
     display: flex;
     justify-content: space-between;
   }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { mangaData } from "../../interface/mangaData";
 import { useMangaDataMutate } from "../../hooks/useMangaDataMutate";
-import './modal.css'
+import './create-modal.css'
 
 
 interface InputProps {
@@ -48,8 +48,8 @@ useEffect(() =>{
 }, [isSuccess])
 
     return(
-        <div className="modal-overlay">
-            <div className="modal-body">
+        <div className="create-modal-overlay">
+            <div className="create-modal-body">
                 <h2>Cadastre um novo Manga</h2>
                 <form className="input-container">
                     <Input label="Nome do Manga" value={nome} updateValue={setNome} />

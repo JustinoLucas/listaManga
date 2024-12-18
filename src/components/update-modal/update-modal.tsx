@@ -36,8 +36,8 @@ export function UpdateModal({ closeModal, manga }: UpdateModalProps) {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal">
+    <div className="update-modal-overlay">
+      <div className="update-modal">
         <h2>Atualizar Manga</h2>
         <form onSubmit={handleSubmit}>
           <label>
@@ -70,7 +70,7 @@ export function UpdateModal({ closeModal, manga }: UpdateModalProps) {
               required
             />
           </label>
-          <div className="modal-actions">
+          <div className="update-modal-actions">
             <button type="submit" disabled={isPending}>
               {isPending ? "Atualizando..." : "Atualizar"}
             </button>
