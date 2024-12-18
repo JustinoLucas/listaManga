@@ -10,10 +10,35 @@ Essa página foi desenvolvida para meu portfolio, para demonstrar conhecimento e
 
 ## Funcionalidades
 
+<h1 align="center">
+    <img src="./public/home.png" width="300"/>
+</h1>
+
 - `Pagina principal` contendo uma lista de mangas adicionados.
+
+<h1 align="center">
+    <img src="./public/add.png" width="300"/>
+</h1>
+
 - `Adicionar` um botão para adicionar um manga novo ao banco de dados.
+
+<h1 align="center">
+    <img src="./public/remover.png" width="300"/>
+</h1>
+
 - `Remover` um botão para remover um manga do banco de dados.
+
+<h1 align="center">
+    <img src="./public/atualizar.png" width="300"/>
+</h1>
+
 - `Atualizar` um botão para atualizar um manga.
+
+<h1 align="center">
+    <img src="./public/pagimamanga.png" width="300"/>
+</h1>
+
+- `Pagina do Produto` ao clicar no card, abre uma pagina com informações do manga.
 
 ## Instalação
 
