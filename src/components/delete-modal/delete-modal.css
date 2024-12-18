@@ -1,0 +1,69 @@
+.delete-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .delete-manga-button {
+    border-radius: 5px;
+    background-color: rgb(216, 32, 32);
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.1s linear 0.1s;
+  }
+
+  .delete-manga-button:hover {
+    box-shadow: 10px 10px 34px -1px rgba(0,0,0,0.75);
+    transform: scale(1.1);
+  }
+  
+  .delete-modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .delete-modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .confirm-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .cancel-button {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .confirm-button:hover {
+    background-color: darkred;
+  }
+  
+  .cancel-button:hover {
+    background-color: darkgray;
+  }
+  
