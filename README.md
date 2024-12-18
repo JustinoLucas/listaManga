@@ -34,4 +34,10 @@ npm install
 npm run dev
 ```
 
+## Integração com Backend
+
+Para realizar a integração com o Backend, você pode clonar o projeto e rodar localmente, ou desenvolver você mesmo
+
+[Link do repositório](https://github.com/JustinoLucas/api-java)
+
 
