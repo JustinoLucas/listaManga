@@ -3,10 +3,11 @@ import { useMangaData } from "../../hooks/useMangaData"; // Hook para buscar os 
 import './card-details.css';
 
 export default function CardDetails() {
-    const { id } = useParams<{ id: string }>(); // Obtém o ID da URL
-    const { data } = useMangaData(); // Obtém os dados do hook
+    
+    const { slug } = useParams<{ slug: string }>(); // Obtém o slug da URL
+    const { data } = useMangaData();
 
-    const manga = data?.find((item) => item.id === Number(id)); // Encontra o card pelo ID
+    const manga = data?.find((item) => generateSlug(item.nome) === slug); // Busca pelo slug
 
     if (!manga) {
         return <p>Produto não encontrado.</p>;
@@ -20,4 +21,11 @@ export default function CardDetails() {
             <p><b>Capítulos:</b> {manga.capitulos}</p>
         </div>
     );
+}
+
+function generateSlug(name: string): string {
+    return name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
 }

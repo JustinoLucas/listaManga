@@ -7,7 +7,7 @@ function MainRouter() {
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/manga/:id" element={<CardDetails />} />
+        <Route path="/:slug" element={<CardDetails />} />
       </Routes>
     </Router>
   );

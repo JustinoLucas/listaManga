@@ -22,7 +22,13 @@
 }
 
 .card-link {
-    text-decoration: none;
     color: inherit;
     display: block;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    color: inherit;
+    display: block;
+    text-decoration: none;
 }
