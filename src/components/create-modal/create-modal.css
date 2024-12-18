@@ -1,7 +1,7 @@
 .create-modal-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     overflow: hidden;
     height: 100vh;
     width: 100vw;
@@ -11,33 +11,32 @@
     justify-content: center;
 
     z-index: 999;
+    backdrop-filter: blur(5px);
 }
 
-.create-modal-overlay .create-modal-body {
+.create-modal-body {
     background-color: white;
     padding: 24px;
-    height: 60%;
-    width: 60%;
+    /* height: 60%; */
+    width: 32%;
     border-radius: 24px;
 
-    display: flex;
-    align-items: flex-start;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.create-modal-overlay .create-modal-body h2 {
+.create-modal-body h2 {
     font-size: 32px;
 }
 
-.create-modal-overlay .create-modal-body .input-container {
+.create-modal-body .input-container {
     width: calc(100% - 24px);
 }
 
-.create-modal-overlay .create-modal-body input {
+.create-modal-body input {
     padding: 12px;
     border: 2px solid #c6c5c5c5;
-    color: rgba(0,0,0,0.9);
+    color: rgba(0, 0, 0, 0.9);
     font-size: 18px;
     line-height: 24px;
     border-radius: 12px;
@@ -46,20 +45,72 @@
     margin-bottom: 12px;
 }
 
-.create-modal-overlay .create-modal-body label {
+.create-modal-body label {
     color: #242424;
     font-weight: 600;
     margin-bottom: 8px;
     font-size: 18px;
 }
 
-.create-modal-overlay .create-modal-body .btn-secondary {
-    position: initial;
-    width: 100%;
-    margin-top: 32px;
+.create-modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.btn-enviar {
+    border-radius: 5px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.1s linear 0.1s;
 }
 
-.create-modal-overlay .create-modal-body .btn-secondary:hover {
+.btn-enviar:hover {
+    background-color: #008307;
+    transform: scale(1);
+}
+
+.btn-sair {
+    border-radius: 5px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+    font-weight: bold;
+    padding: 12px 32px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.1s linear 0.1s;
+}
+
+.btn-sair:hover {
     background-color: #3a44f8;
     transform: scale(1);
+}
+
+.novo-manga-button {
+    position: fixed;
+    bottom: 16px;
+    right: 24px;
+}
+
+.novo-manga-button {
+    border-radius: 10px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+    font-weight: bold;
+    padding: 12px 42px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.1s linear 0.1s ;
+}
+
+.novo-manga-button:hover {
+    box-shadow: 10px 10px 34px -1px rgba(0, 0, 0, 0.75);
+    background-color: rgb(75, 75, 75);
+    transform: scale(1.1);
 }

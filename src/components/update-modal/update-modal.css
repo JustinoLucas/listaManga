@@ -4,39 +4,100 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(255, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .update-modal {
+    z-index: 999;
+    backdrop-filter: blur(5px);
+
+}
+
+.update-modal-body {
     background: white;
     padding: 20px;
     border-radius: 8px;
     width: 400px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .update-modal h2 {
+
+}
+
+.input-container {
+    width: calc(100% - 24px);
+}
+
+.update-modal-body h2 {
     margin-bottom: 20px;
-  }
-  
-  .update-modal label {
+}
+
+.update-modal-body label {
     display: block;
     margin-bottom: 10px;
-  }
-  
-  .update-modal input {
+}
+
+.update-modal-body input {
     width: 100%;
     padding: 8px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  .update-modal-actions {
+}
+
+.update-modal-actions {
     display: flex;
     justify-content: space-between;
-  }
-  
+}
+
+
+.atualizar-manga-button {
+    border-radius: 5px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.1s linear 0.1s;
+}
+
+.atualizar-manga-button:hover {
+    box-shadow: 10px 10px 34px -1px rgba(0,0,0,0.75);
+    transform: scale(1.1);
+}
+
+
+.update-enviar-button {
+    border-radius: 5px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.1s linear 0.1s;
+}
+
+.update-enviar-button:hover {
+    box-shadow: 10px 10px 34px -1px rgba(0,0,0,0.75);
+    background-color: rgb(0, 104, 5);
+}
+
+
+.update-sair-button {
+    border-radius: 5px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.1s linear 0.1s;
+}
+
+.update-sair-button:hover {
+    box-shadow: 10px 10px 34px -1px rgba(0,0,0,0.75);
+    background-color: rgb(170, 0, 0);
+}

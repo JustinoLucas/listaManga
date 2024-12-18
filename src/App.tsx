@@ -38,20 +38,20 @@ function App() {
       <h1>Lista de Mangas</h1>
       <div className="card-grip">
         {sortedData?.map((mangaData) => (
-          <div key={mangaData.id} className="card">
+          <div key={mangaData.id} className="card-principal">
             <Card
               nome={mangaData.nome}
               imagem_capa={mangaData.imagem_capa}
               capitulos={mangaData.capitulos}
             />
-            <button onClick={() => handleOpenUpdateModal(mangaData)}>
+            <button onClick={() => handleOpenUpdateModal(mangaData)} className='atualizar-manga-button'>
               Atualizar
             </button>
           </div>
         ))}
         {isModalOpen && <CreateModal closeModal={handleCloseModal} />}
         {isUpdateModalOpen && selectedManga && (<UpdateModal closeModal={handleCloseUpdateModal} manga={selectedManga} />)}
-        <button onClick={handleOpenModal} className='novo-produto-button'>Novo</button>
+        <button onClick={handleOpenModal} className='novo-manga-button'>Adicionar Manga</button>
       </div>
     </div>
   );
