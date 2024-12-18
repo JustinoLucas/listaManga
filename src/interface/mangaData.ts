@@ -1,5 +1,5 @@
 export interface mangaData {
-    id?: number,
+    id: number,
     nome: string,
     descricao: string,
     imagem_capa: string,

@@ -33,13 +33,13 @@ const [capitulos, setCapitulos] = useState(0)
 const { mutate, isSuccess, isPending } = useMangaDataMutate();
 
 const submit = () => {
-    const mangaData: mangaData = {
+    const mangaData: Omit<mangaData, "id"> = {
         nome,
         descricao,
         imagem_capa,
         capitulos
     }
-    mutate(mangaData);
+    mutate(mangaData as mangaData);
 }
 
 useEffect(() =>{
