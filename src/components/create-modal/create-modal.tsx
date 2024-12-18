@@ -30,9 +30,14 @@ const [nome, setNome] = useState("");
 const [descricao, setDescricao] = useState("")
 const [imagem_capa, setImagemCapa] = useState("")
 const [capitulos, setCapitulos] = useState(0)
+const [error, setError] = useState<string | null>(null);
 const { mutate, isSuccess, isPending } = useMangaDataMutate();
 
 const submit = () => {
+    if (!nome || !descricao || !imagem_capa || !capitulos) {
+        setError("Por favor, preencha todos os campos!");
+        return; 
+      }
     const mangaData: Omit<mangaData, "id"> = {
         nome,
         descricao,
@@ -42,21 +47,29 @@ const submit = () => {
     mutate(mangaData as mangaData);
 }
 
+const handleChange = (setter: React.Dispatch<React.SetStateAction<any>>) => (value: any) => {
+    setter(value);
+    if (error) {
+      setError(null); // Limpa a mensagem de erro se o usuário começar a digitar
+    }
+  };
+
 useEffect(() =>{
     if(!isSuccess) return
     closeModal();
-}, [isSuccess])
+}, [isSuccess, closeModal])
 
     return(
         <div className="create-modal-overlay">
             <div className="create-modal-body">
                 <h2>Cadastre um novo Manga</h2>
                 <form className="input-container">
-                    <Input label="Nome do Manga" value={nome} updateValue={setNome} />
-                    <Input label="Sinopse" value={descricao} updateValue={setDescricao}/>
-                    <Input label="Imagem da Capa em URL" value={imagem_capa} updateValue={setImagemCapa}/>
-                    <Input label="Capitulos" value={capitulos} updateValue={setCapitulos}/>
+                    <Input label="Nome do Manga" value={nome} updateValue={handleChange(setNome)} />
+                    <Input label="Sinopse" value={descricao} updateValue={handleChange(setDescricao)}/>
+                    <Input label="Imagem da Capa em URL" value={imagem_capa} updateValue={handleChange(setImagemCapa)}/>
+                    <Input label="Capitulos" value={capitulos} updateValue={handleChange(setCapitulos)}/>
                 </form>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
                 <button onClick={submit} className="btn-secondary">
                     {isPending ? 'Enviando...' : 'Enviar'}
                 </button>
