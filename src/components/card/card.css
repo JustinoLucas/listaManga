@@ -19,5 +19,10 @@
 .botoes-card {
     display: flex;
     gap: 30px;
-    /* background-color: red; */
-  }
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}

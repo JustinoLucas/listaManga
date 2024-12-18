@@ -1,0 +1,9 @@
+.card-details {
+    text-align: center;
+    margin: 20px;
+}
+
+.card-details img {
+    max-width: 300px;
+    margin-bottom: 20px;
+}

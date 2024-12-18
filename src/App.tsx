@@ -62,11 +62,12 @@ function App() {
         {sortedData?.map((mangaData) => (
           <div key={mangaData.id} className="card-principal">
             <Card
+              id={mangaData.id}
               nome={mangaData.nome}
               imagem_capa={mangaData.imagem_capa}
               capitulos={mangaData.capitulos}
             />
-            <div className="botoes-card">
+            <div className='botoes-card'>
               <button onClick={() => handleOpenUpdateModal(mangaData)} className='atualizar-manga-button'>
                 Atualizar
               </button>
@@ -78,7 +79,7 @@ function App() {
         ))}
         {isModalOpen && <CreateModal closeModal={handleCloseModal} />}
         {isUpdateModalOpen && selectedManga && (<UpdateModal closeModal={handleCloseUpdateModal} manga={selectedManga} />)}
-        {isDeleteModalOpen && (<DeleteModal closeModal={handleCloseDeleteModal} confirmDelete={handleConfirmDelete}/>)}
+        {isDeleteModalOpen && (<DeleteModal closeModal={handleCloseDeleteModal} confirmDelete={handleConfirmDelete} />)}
         <button onClick={handleOpenModal} className='novo-manga-button'>Adicionar Manga</button>
       </div>
     </div>
