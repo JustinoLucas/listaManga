@@ -40,6 +40,7 @@ Essa página foi desenvolvida para meu portfolio, para demonstrar conhecimento e
 <h1 align="center">
     <img src="./public/paginamanga.png" width="300"/>
 </h1>
+
 ## Instalação
 
 1. Clone o repositorio:
