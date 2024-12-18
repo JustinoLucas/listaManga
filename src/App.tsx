@@ -16,6 +16,7 @@ function App() {
   const [selectedManga, setSelectedManga] = useState<mangaData | null>(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [selectedMangaId, setSelectedMangaId] = useState<number | null>(null);
+  const [selectedMangaName, setSelectedMangaName] = useState<string | null>(null);
   const { mutate: deleteManga } = useMangaDataDelete();
 
   const handleOpenModal = () => {
@@ -36,8 +37,9 @@ function App() {
     setIsUpdateModalOpen(false);
   }
 
-  const handleOpenDeleteModal = (id: number) => {
+  const handleOpenDeleteModal = (id: number, name: string) => {
     setSelectedMangaId(id);
+    setSelectedMangaName(name);
     setIsDeleteModalOpen(true);
   };
 
@@ -71,7 +73,7 @@ function App() {
               <button onClick={() => handleOpenUpdateModal(mangaData)} className='atualizar-manga-button'>
                 Atualizar
               </button>
-              <button onClick={() => handleOpenDeleteModal(mangaData.id)} className="delete-manga-button">
+              <button onClick={() => handleOpenDeleteModal(mangaData.id, mangaData.nome)} className="delete-manga-button">
                 Excluir
               </button>
             </div>
@@ -79,7 +81,7 @@ function App() {
         ))}
         {isModalOpen && <CreateModal closeModal={handleCloseModal} />}
         {isUpdateModalOpen && selectedManga && (<UpdateModal closeModal={handleCloseUpdateModal} manga={selectedManga} />)}
-        {isDeleteModalOpen && (<DeleteModal closeModal={handleCloseDeleteModal} confirmDelete={handleConfirmDelete} />)}
+        {isDeleteModalOpen && (<DeleteModal closeModal={handleCloseDeleteModal} confirmDelete={handleConfirmDelete} mangaName={selectedMangaName}/>)}
         <button onClick={handleOpenModal} className='novo-manga-button'>Adicionar Manga</button>
       </div>
     </div>
