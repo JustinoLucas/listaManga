@@ -10,15 +10,15 @@ interface CardProps {
     capitulos: number
 }
 
-function generateSlug(name: string): string {
-    return name
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-') // Substitui caracteres não alfanuméricos por '-'
-        .replace(/^-+|-+$/g, '');   // Remove '-' no início ou fim
-}
+function generateSlug(name: string, id: number): string {
+    const normalizedName = name
+        .normalize("NFD") // Decompõe caracteres acentuados
+        .replace(/[\u0300-\u036f]/g, ""); // Remove marcas diacríticas (acentos)
 
+    return `${normalizedName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${id}`;
+}
 export function Card({id, nome, imagem_capa, capitulos }: CardProps) {
-    const slug = generateSlug(nome); 
+    const slug = generateSlug(nome, id); 
     return (
         <>
             <Link to={`/${slug}`} className="card-link">

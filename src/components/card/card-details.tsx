@@ -7,7 +7,7 @@ export default function CardDetails() {
     const { slug } = useParams<{ slug: string }>(); // Obtém o slug da URL
     const { data } = useMangaData();
 
-    const manga = data?.find((item) => generateSlug(item.nome) === slug); // Busca pelo slug
+    const manga = data?.find((item) => generateSlug(item.nome, item.id) === slug); // Busca pelo slug
 
     if (!manga) {
         return <p>Produto não encontrado.</p>;
@@ -23,9 +23,10 @@ export default function CardDetails() {
     );
 }
 
-function generateSlug(name: string): string {
-    return name
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '');
+function generateSlug(name: string, id: number): string {
+    const normalizedName = name
+        .normalize("NFD") // Decompõe caracteres acentuados
+        .replace(/[\u0300-\u036f]/g, ""); // Remove marcas diacríticas (acentos)
+
+    return `${normalizedName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${id}`;
 }
