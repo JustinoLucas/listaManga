@@ -25,6 +25,9 @@
 
 .create-modal-body h2 {
     font-size: 32px;
+    color: black;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 .create-modal-body .input-container {
@@ -39,6 +42,17 @@
     line-height: 24px;
     border-radius: 12px;
     width: 100%;
+    margin-bottom: 12px;
+}
+
+
+.input-slc select {
+    padding: 12px;
+    border: 2px solid #c6c5c5c5;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 18px;
+    line-height: 24px;
+    border-radius: 12px;
     margin-bottom: 12px;
 }
 

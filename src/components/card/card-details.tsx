@@ -46,6 +46,7 @@ export default function CardDetails() {
             deleteManga(manga.id);
         }
         handleCloseDeleteModal();
+        voltarPage("/");
     };
 
     const handleGoBack = () => {
@@ -67,6 +68,10 @@ export default function CardDetails() {
                                 <img src={manga.imagem_capa} alt={`Capa de ${manga.nome}`} />
                             </div>
                             <div className="page-desc-card">
+                                <p><b>Nome Alternativo: </b> {manga.nome_alternativo}</p>
+                                <p><b>Autor: </b> {manga.autor_manga}</p>
+                                <p><b>Estudio: </b> {manga.estudio}</p>
+                                <p><b>Tipo:</b> {manga.tipo_manga}</p>
                                 <p><b>Capítulos:</b> {manga.capitulos}</p>
                                 <h3>Descrição</h3>
                                 <p>{manga.descricao}</p>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useMangaDataUpdate } from "../../hooks/useMangaDataUpdate";
 import { mangaData } from "../../interface/mangaData";
 import "./update-modal.css";
@@ -23,7 +23,7 @@ export function UpdateModal({ closeModal, manga }: UpdateModalProps) {
     });
 
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
@@ -107,13 +107,16 @@ export function UpdateModal({ closeModal, manga }: UpdateModalProps) {
                     </label>
                     <label>
                         Tipo do Manga:
-                        <input
-                            type="text"
-                            name="imagem_capa"
+                        <select
+                            name="tipo_manga"
                             value={formData.tipo_manga}
                             onChange={handleChange}
                             required
-                        />
+                        >
+                            <option value="Manhua">Manhua</option>
+                            <option value="Manga">Manga</option>
+                            <option value="Manhwa">Manhwa</option>
+                        </select>
                     </label>
                     <label>
                         Capitulos:

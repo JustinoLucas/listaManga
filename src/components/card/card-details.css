@@ -77,6 +77,10 @@ body {
     text-align: center;
 }
 
+.page-desc-card p {
+    margin: 5px;
+}
+
 .botoes-card {
     display: flex;
     gap: 30px;
