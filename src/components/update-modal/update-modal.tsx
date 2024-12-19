@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMangaDataUpdate } from "../../hooks/useMangaDataUpdate";
 import { mangaData } from "../../interface/mangaData";
 import "./update-modal.css";
@@ -16,7 +16,12 @@ export function UpdateModal({ closeModal, manga }: UpdateModalProps) {
         imagem_capa: manga.imagem_capa,
         descricao: manga.descricao,
         capitulos: manga.capitulos,
+        nome_alternativo: manga.nome_alternativo,
+        estudio: manga.estudio,
+        autor_manga: manga.autor_manga,
+        tipo_manga: manga.tipo_manga
     });
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -51,11 +56,61 @@ export function UpdateModal({ closeModal, manga }: UpdateModalProps) {
                         />
                     </label>
                     <label>
+                        Nome Alternativo:
+                        <input
+                            type="text"
+                            name="descricao"
+                            value={formData.nome_alternativo}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    <label>
+                        Nome do Autor:
+                        <input
+                            type="text"
+                            name="descricao"
+                            value={formData.autor_manga}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    <label>
+                        Nome do Estudio:
+                        <input
+                            type="text"
+                            name="descricao"
+                            value={formData.estudio}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    <label>
+                        Descrição:
+                        <input
+                            type="text"
+                            name="descricao"
+                            value={formData.descricao}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    <label>
                         Imagem URL:
                         <input
                             type="text"
                             name="imagem_capa"
                             value={formData.imagem_capa}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    <label>
+                        Tipo do Manga:
+                        <input
+                            type="text"
+                            name="imagem_capa"
+                            value={formData.tipo_manga}
                             onChange={handleChange}
                             required
                         />

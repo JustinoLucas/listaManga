@@ -16,10 +16,6 @@
     height: 350px;
 }
 
-.botoes-card {
-    display: flex;
-    gap: 30px;
-}
 
 .card-link {
     color: inherit;

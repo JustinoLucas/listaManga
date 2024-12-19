@@ -3,5 +3,9 @@ export interface mangaData {
     nome: string,
     descricao: string,
     imagem_capa: string,
-    capitulos: number
+    capitulos: number,
+    autor_manga: string,
+    nome_alternativo: string,
+    tipo_manga: string,
+    estudio: string
 }

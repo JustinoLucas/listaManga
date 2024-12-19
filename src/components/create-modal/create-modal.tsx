@@ -29,6 +29,10 @@ export function CreateModal({ closeModal }: ModalProps) {
     const [nome, setNome] = useState("");
     const [descricao, setDescricao] = useState("")
     const [imagem_capa, setImagemCapa] = useState("")
+    const [autor_manga, setAutorManga] = useState("")
+    const [nome_alternativo, setNomeAlternativo] = useState("")
+    const [tipo_manga, setTipoManga] = useState("")
+    const [estudio, setEstudio] = useState("")
     const [capitulos, setCapitulos] = useState(0)
     const [error, setError] = useState<string | null>(null);
     const { mutate, isSuccess, isPending } = useMangaDataMutate();
@@ -42,7 +46,11 @@ export function CreateModal({ closeModal }: ModalProps) {
             nome,
             descricao,
             imagem_capa,
-            capitulos
+            capitulos,
+            autor_manga,
+            nome_alternativo,
+            tipo_manga,
+            estudio
         }
         mutate(mangaData as mangaData);
     }
@@ -66,6 +74,10 @@ export function CreateModal({ closeModal }: ModalProps) {
                 <form className="input-container">
                     <Input label="Nome do Manga" value={nome} updateValue={handleChange(setNome)} />
                     <Input label="Sinopse" value={descricao} updateValue={handleChange(setDescricao)} />
+                    <Input label="Nome do Autor" value={autor_manga} updateValue={handleChange(setAutorManga)} />
+                    <Input label="Nome Alternativo do manga" value={nome_alternativo} updateValue={handleChange(setNomeAlternativo)} />
+                    <Input label="Tipo do Manga" value={tipo_manga} updateValue={handleChange(setTipoManga)} />
+                    <Input label="Nome do Estudio" value={estudio} updateValue={handleChange(setEstudio)} />
                     <Input label="Imagem da Capa em URL" value={imagem_capa} updateValue={handleChange(setImagemCapa)} />
                     <Input label="Capitulos" value={capitulos} updateValue={handleChange(setCapitulos)} />
                 </form>
