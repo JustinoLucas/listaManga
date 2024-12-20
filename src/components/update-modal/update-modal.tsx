@@ -59,7 +59,7 @@ export function UpdateModal({ closeModal, manga }: UpdateModalProps) {
                         Nome Alternativo:
                         <input
                             type="text"
-                            name="descricao"
+                            name="nome_alternativo"
                             value={formData.nome_alternativo}
                             onChange={handleChange}
                             required
@@ -69,7 +69,7 @@ export function UpdateModal({ closeModal, manga }: UpdateModalProps) {
                         Nome do Autor:
                         <input
                             type="text"
-                            name="descricao"
+                            name="autor_manga"
                             value={formData.autor_manga}
                             onChange={handleChange}
                             required
@@ -79,7 +79,7 @@ export function UpdateModal({ closeModal, manga }: UpdateModalProps) {
                         Nome do Estudio:
                         <input
                             type="text"
-                            name="descricao"
+                            name="estudio"
                             value={formData.estudio}
                             onChange={handleChange}
                             required
