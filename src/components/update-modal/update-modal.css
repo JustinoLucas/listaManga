@@ -37,12 +37,16 @@
 }
 
 .update-modal-body input {
+    padding: 12px;
+    border: 2px solid #c6c5c5c5;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 18px;
+    line-height: 24px;
+    border-radius: 12px;
     width: 100%;
-    padding: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    margin-bottom: 12px;
 }
+
 
 .update-modal-actions {
     display: flex;
@@ -69,36 +73,42 @@
 
 
 .update-enviar-button {
-    border-radius: 5px;
-    background-color: rgb(39, 39, 39);
+    background-color: red;
     color: white;
-    font-weight: bold;
-    padding: 8px 16px;
     border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    margin-top: 10px;
+    border-radius: 4px;
     transition: all 0.1s linear 0.1s;
 }
 
 .update-enviar-button:hover {
     box-shadow: 10px 10px 34px -1px rgba(0,0,0,0.75);
-    background-color: rgb(0, 104, 5);
+    background-color: darkred;
 }
 
 
 .update-sair-button {
-    border-radius: 5px;
-    background-color: rgb(39, 39, 39);
+    background-color: gray;
     color: white;
-    font-weight: bold;
-    padding: 8px 16px;
     border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    margin-top: 10px;
+    border-radius: 4px;
     transition: all 0.1s linear 0.1s;
 }
 
 .update-sair-button:hover {
     box-shadow: 10px 10px 34px -1px rgba(0,0,0,0.75);
-    background-color: rgb(170, 0, 0);
+    background-color: darkgray;
+}
+
+select {
+    padding: 12px;
+    border: 2px solid #c6c5c5c5;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 18px;
+    line-height: 24px;
+    border-radius: 12px;
+    margin-bottom: 12px;
 }

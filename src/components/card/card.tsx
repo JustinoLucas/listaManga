@@ -17,14 +17,18 @@ function generateSlug(name: string, id: number): string {
 
     return `${normalizedName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${id}`;
 }
-export function Card({id, nome, imagem_capa, capitulos }: CardProps) {
-    const slug = generateSlug(nome, id); 
+export function Card({ id, nome, imagem_capa, capitulos }: CardProps) {
+    const slug = generateSlug(nome, id);
     return (
         <>
             <Link to={`/${slug}`} className="card-link">
-                <img src={imagem_capa} />
-                <h2>{nome}</h2>
-                <p><b>Capitulos:</b>{capitulos}</p>
+                <div className="card-principal-img">
+                    <img src={imagem_capa} />
+                </div>
+                <div className="card-principal-desc">
+                    <h2>{nome}</h2>
+                    <p><b>Capitulos:</b>{capitulos}</p>
+                </div>
             </Link>
         </>
     )

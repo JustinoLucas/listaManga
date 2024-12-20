@@ -49,6 +49,7 @@
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
+    transition: all 0.1s linear 0.1s;
   }
   
   .cancel-button {
@@ -58,13 +59,16 @@
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
+    transition: all 0.1s linear 0.1s;
   }
   
   .confirm-button:hover {
     background-color: darkred;
+    box-shadow: 10px 10px 34px -1px rgba(0,0,0,0.75);
   }
   
   .cancel-button:hover {
     background-color: darkgray;
+    box-shadow: 10px 10px 34px -1px rgba(0,0,0,0.75);
   }
   
